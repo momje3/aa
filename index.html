@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
     <script>
-        // Function to extract username from URL and redirect
+        // Function to extract username from URL path and redirect to NitroType
         function redirectToNitroType() {
             const path = window.location.pathname;
             const parts = path.split('/');
 
             if (parts.length > 1) {
-                const username = parts[1];
-                const redirectUrl = `https://nitrotype.com/racer/${username}`;
+                const username = parts[parts.length - 1]; // Get the last part of the path
+                const redirectUrl = `https://www.nitrotype.com/racer/${username}`;
                 window.location.href = redirectUrl;
             } else {
-                // Redirect to a default page if no username is provided
-                window.location.href = 'https://nitrotype.com/racer/bot1132'; // Change to your default redirect URL
+                // Redirect to NitroType homepage if unable to determine username
+                window.location.href = 'https://www.nitrotype.com';
             }
         }
 
@@ -25,6 +25,6 @@
     </script>
 </head>
 <body>
-    <p>If you are not redirected automatically, <a href="https://nitrotype.com">click here</a>.</p>
+    <p>If you are not redirected automatically, <a href="https://www.nitrotype.com">click here</a>.</p>
 </body>
 </html>
