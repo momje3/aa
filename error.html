@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        // Function to extract username from URL path and redirect to NitroType
+        function redirectToNitroType() {
+            // Get the current URL path
+            const path = window.location.pathname;
+
+            // Split the path by '/' to extract parts
+            const parts = path.split('/');
+
+            // Check if there are path segments after the domain
+            if (parts.length > 1) {
+                // Extract the last segment of the path as the username
+                const username = parts[parts.length - 1];
+
+                // Construct the redirect URL to NitroType racer profile
+                const redirectUrl = `https://www.nitrotype.com/racer/${username}`;
+
+                // Redirect the user to the constructed URL
+                window.location.href = redirectUrl;
+            } else {
+                // If no valid username found, redirect to NitroType homepage
+                window.location.href = 'https://www.nitrotype.com';
+            }
+        }
+
+        // Call the redirection function when the page loads
+        redirectToNitroType();
+    </script>
+</head>
+<body>
+    <!-- Display a message with a link to NitroType homepage if redirection fails -->
+    <p>If you are not redirected automatically, <a href="https://www.nitrotype.com">click here</a>.</p>
+</body>
+</html>
